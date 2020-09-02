@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>首页</title>
+    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="./lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="navigation.css" />
+    <script src="./lib/vue.js"></script>
+</head>
+
+<body>
+    <div class="page_top" id="app">
+        <div class="nav">
+            <div><img src="../鸿海鑫平台/images/logo_01.png" alt="" /></div>
+            <ul>
+                <li><a href="./home.html">首页</a></li>
+                <li><a href="./video.html">视频监控</a></li>
+                <li><a href="./alarm.html">入侵报警</a></li>
+                <li><a href="">事件联动</a></li>
+                <li><a href="./management.html"> 网络管理</a></li>
+                <li><a href="">运营管理</a></li>
+                <li><a href="">云隐分析</a></li>
+                <li><a href="">巡查考评</a></li>
+                <li><a href="">信息发布</a></li>
+                <li><a href="">代办消息</a></li>
+            </ul>
+        </div>
+        <div style="background-color: white;">
+            <div class="form-group panel-body form-inline">
+                <label>所在区域</label>
+                <select>
+                    <option>全部</option>
+                    <option>根节点</option>
+                </select>
+                <label for="">所在位置</label>
+                <select name="sele" id="">
+                    <option value=""> 小区周界</option>
+                    <option value=""> 小区出入口</option>
+                    <option value=""> 消防通道</option>
+                    <option value=""> 景观池</option>
+                    <option value=""> 停车场区</option>
+                    <option value=""> 设备房</option>
+                </select>
+                <label for="">事件源</label>
+                <input type="text" />
+                <label for="">事件等级</label>
+                <select name="" id="">
+                    <option name="" id="">高</option>
+                    <option name="" id="">中</option>
+                    <option name="" id="">低 </option>
+                </select>
+                <label> 开始时间： </label>
+                <input class="form-control" type="date" />
+                <label> 结束时间： </label>
+                <input class="form-control" type="date" />
+                <label for="">处理状态</label>
+                <select name="" id="">
+                    <option value="">已处理</option>
+                    <option value="">未处理</option>
+                </select>
+                <label for="">处理意见</label>
+                <input type="text" />
+                <input type="button" class="btn btn-primary" style="float: right; margin-right: 100px;" value="重置" />
+                <input type="button" class="btn btn-primary" style="float: right; margin-right: 20px;" value="查询" />
+            </div>
+        </div>
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr :style="[styleObj1,styleObj2]">
+                    <th>时间</th>
+                    <th>所在区域/位置</th>
+                    <th>事件源</th>
+                    <th>事件类型</th>
+                    <th>事件等级</th>
+                    <th>处理状态</th>
+                    <th>处理意见</th>
+                    <th>详情</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="item in list" :key="item.ctime">
+                    <td>{{ item.ctime }}</td>
+                    <td>{{ item.area }}</td>
+                    <td>{{ item.source }}</td>
+                    <td>{{ item.type }}</td>
+                    <td>{{ item.level}}</td>
+                    <td>{{ item.state}}</td>
+                    <td>{{ item.opinion}}</td>
+                    <td>{{ item.details}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                styleObj1: {
+                    color: "blue",
+                },
+                styleObj2: {
+                    fontSize: "15px",
+                    cursor: "pointer",
+                },
+                list: [{
+                        ctime: new Date().toLocaleString(),
+                        area: "小区出入口",
+                        source: "出现移动物体",
+                        type: "画面异常",
+                        level: "高",
+                        state: "已处理",
+                        opinion: "认真查看现场情况",
+                        details: "",
+                    },
+                    {
+                        ctime: new Date().toLocaleString(),
+                        area: "停车场区",
+                        source: "出现移动物体",
+                        type: "画面异常",
+                        level: "低",
+                        state: "已处理",
+                        opinion: "认真查看现场情况",
+                        details: "",
+                    },
+                    {
+                        ctime: new Date().toLocaleString(),
+                        area: "设备房",
+                        source: "出现移动物体",
+                        type: "画面异常",
+                        level: "高",
+                        state: "已处理",
+                        opinion: "认真查看现场情况",
+                        details: "",
+                    },
+                    {
+                        ctime: new Date().toLocaleString(),
+                        area: "小区周界",
+                        source: "出现移动物体",
+                        type: "画面异常",
+                        level: "高",
+                        state: "已处理",
+                        opinion: "认真查看现场情况",
+                        details: "",
+                    },
+                    {
+                        ctime: new Date().toLocaleString(),
+                        area: "停车场区",
+                        source: "出现移动物体",
+                        type: "画面异常",
+                        level: "高",
+                        state: "未处理",
+                        opinion: "及时处理",
+                        details: "",
+                    },
+                    {
+                        ctime: new Date().toLocaleString(),
+                        area: "设备房",
+                        source: "出现移动物体",
+                        type: "画面异常",
+                        level: "高",
+                        state: "未处理",
+                        opinion: "及时处理",
+                        details: "",
+                    },
+                    {
+                        ctime: new Date().toLocaleString(),
+                        area: "设备房",
+                        source: "出现移动物体",
+                        type: "画面异常",
+                        level: "高",
+                        state: "未处理",
+                        opinion: "及时处理",
+                        details: "",
+                    },
+                    {
+                        ctime: new Date().toLocaleString(),
+                        area: "小区周界",
+                        source: "出现移动物体",
+                        type: "画面异常",
+                        level: "高",
+                        state: "未处理",
+                        opinion: "及时处理",
+                        details: "",
+                    },
+                    {
+                        ctime: new Date().toLocaleString(),
+                        area: "小区出入口",
+                        source: "出现移动物体",
+                        type: "画面异常",
+                        level: "高",
+                        state: "未处理",
+                        opinion: "及时处理",
+                        details: "",
+                    },
+                ],
+            },
+        });
+    </script>
+    <nav aria-label="Page navigation" style="float: right;">
+        <ul class="pagination">
+            <li>
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+                <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</body>
+
+</html>

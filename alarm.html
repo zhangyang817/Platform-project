@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./lib/bootstrap.min.css" />
+  <link rel="stylesheet" href="./navigation.css" />
+  <link rel="stylesheet" href="./alarm.css" />
+  <script src="./lib/vue.js"></script>
+
+  <title>入侵报警</title>
+</head>
+
+<body>
+  <div class="page_top" id="app">
+    <div class="nav">
+      <div><img src="../鸿海鑫平台/images/logo_01.png" alt="" /></div>
+      <ul>
+        <li><a href="../鸿海鑫平台/home.html">首页</a></li>
+        <li><a href="../鸿海鑫平台/video.html">视频监控</a></li>
+        <li><a href="../鸿海鑫平台/alarm.html">入侵报警</a></li>
+        <li><a href="./link.html">事件联动</a></li>
+        <li><a href="../鸿海鑫平台/management.html"> 网络管理</a></li>
+        <li><a href="">运营管理</a></li>
+        <li><a href="">云隐分析</a></li>
+        <li><a href="">巡查考评</a></li>
+        <li><a href="">信息发布</a></li>
+        <li><a href="">代办消息</a></li>
+      </ul>
+    </div>
+    <div style="background-color: white;">
+      <div class="panel-body form-inline">
+        <label> 开始时间： </label>
+        <input class="form-control" type="date" />
+        <label> 结束时间： </label>
+        <input class="form-control" type="date" />
+        <label> 事件源： </label>
+        <input class="form-control" type="text" />
+        <label> 事件类型 </label>
+        <input class="form-control" type="text" />
+        <input type="button" class="btn btn-primary" style="float: right; margin-right: 100px;" value="重置" />
+        <input type="button" class="btn btn-primary" style="float: right; margin-right: 20px;" value="查询" />
+      </div>
+    </div>
+    <table class="table table-bordered table-striped table-hover">
+      <thead>
+        <tr :style="[styleObj1,styleObj2]">
+          <th>发生时间</th>
+          <th>所在区域</th>
+          <th>事件源</th>
+          <th>事件类型</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="item in list" :key="item.ctime">
+          <td>{{ item.ctime }}</td>
+          <td>{{ item.area }}</td>
+          <td>{{ item.source }}</td>
+          <td>{{ item.type }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script>
+    var app = new Vue({
+      el: "#app",
+      data: {
+        styleObj1: {
+          color: "blue",
+        },
+        styleObj2: {
+          fontSize: "15px",
+          cursor: "pointer",
+        },
+        list: [{
+            ctime: new Date().toLocaleString(),
+            area: "仓库",
+            source: "出现移动物体",
+            type: "画面异常",
+          },
+          {
+            ctime: new Date().toLocaleString(),
+            area: "办公楼",
+            source: "出现移动物体",
+            type: "画面异常",
+          },
+          {
+            ctime: new Date().toLocaleString(),
+            area: "洗手间",
+            source: "出现移动物体",
+            type: "画面异常",
+          },
+          {
+            ctime: new Date().toLocaleString(),
+            area: "走道",
+            source: "出现移动物体",
+            type: "画面异常",
+          },
+          {
+            ctime: new Date().toLocaleString(),
+            area: "办公室",
+            source: "出现移动物体",
+            type: "画面异常",
+          },
+        ],
+      },
+    });
+  </script>
+  <nav aria-label="Page navigation" style="float: right;">
+    <ul class="pagination">
+      <li>
+        <a href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li class="active"><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li>
+        <a href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+.nav_1 {
+    width: 100%;
+    height: 50px;
+    background-color: white;
+}
+
+.page_body {
+    height: 300px;
+    margin-left: 15px;
+
+}
+
+.page_body div {
+    float: left;
+    margin: 10px 15px;
+    height: 280px;
+    width: 440px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 5px 5px 5px 5px rgb(244, 243, 254);
+}
+
+.page_body_1 {
+    height: 270px;
+    width: 1850px;
+    background-color: white;
+    margin: 5px 30px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px 5px rgb(244, 243, 254);
+}
+
+.page_body_2 {
+    height: 280px;
+    margin: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px 5px rgb(244, 243, 254);
+}
+
+.page_body_2 div {
+    float: left;
+    margin: 5px 10px;
+    height: 280px;
+    width: 911px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 5px 5px 5px 5px rgb(244, 243, 254);
+}
