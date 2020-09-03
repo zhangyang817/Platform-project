@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>首页</title>
+    <title>视频监控</title>
     <link rel="stylesheet" href="video.css">
     <link rel="stylesheet" href="./lib/bootstrap.min.css">
     <link rel="stylesheet" href="navigation.css">
@@ -29,19 +29,51 @@
             </ul>
         </div>
     </div>
+    <canvas id="myCanvas" width="800px" height="500px" style=" float: right; margin: 30px; border:1px solid black;">
+    </canvas>
     <div class="body">
-        <div class="video"></div>
-        <div style=" position:relative; ">
-            <div style="margin-left: 30px;">
-                <button style=" border: none; background-color: #999;padding: 10px; border-radius: 5px;">全屏</button>
-                </br>
-                <label for="">窗口分割线</label>
-                <select name=" " id="">
-                    <option value="2*2">2*2</option>
-                    <option value="4*4">4*4</option>
+        <div class="panel panel-heading">
+            <h4>视频监控</h4>
+        </div>
+        <div class="body_1">
+            <div>
+                <label for="">多画面选择：</label>
+                <select name=" " id="" style=" padding:0px 120px 0px 0px; ">
+                    <option value="2x2"></option>
+                    <option value="4x4"></option>
                 </select>
+            </div>
+            <div>
+                <label for="">已登录设备：</label>
+                <select style=" padding:0px 120px 0px 0px;">
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+            </div>
+            <div>
+                <label for="">通道列表：</label>
+                <select style=" padding:0px 120px 0px 0px;">
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+            </div>
+            <div>
+                <button type="button" class="btn btn-primary ">预览</button>
             </div>
         </div>
     </div>
-
 </body>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.moveTo(400, 0);
+    ctx.lineTo(400, 500);
+    ctx.stroke();
+    var d = document.getElementById("myCanvas");
+    var ctx = d.getContext("2d");
+    ctx.moveTo(0, 250);
+    ctx.lineTo(800, 250);
+    ctx.stroke();
+</script>
