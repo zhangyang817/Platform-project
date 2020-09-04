@@ -1,47 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>视频监控</title>
-    <link rel="stylesheet" href="video.css">
-    <link rel="stylesheet" href="./lib/bootstrap.min.css">
-    <link rel="stylesheet" href="navigation.css">
+    <link rel="stylesheet" href="video.css" />
+    <link rel="stylesheet" href="./lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="navigation.css" />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <div class="page_top">
-        <div class="nav">
-            <div><img src="./images/logo_01.png" alt=""></div>
-            <ul>
-                <li><a href="./home.html">首页</a></li>
-                <li><a href="">视频监控</a></li>
-                <li><a href="./alarm.html">入侵报警</a></li>
-                <li><a href="./link.html">事件联动</a></li>
-                <li><a href="./management.html"> 网络管理</a></li>
-                <li><a href="">运营管理</a></li>
-                <li><a href="">云隐分析</a></li>
-                <li><a href="">巡查考评</a></li>
-                <li><a href="">信息发布</a></li>
-                <li><a href="">代办消息</a></li>
-            </ul>
-        </div>
+      <div class="nav">
+        <div><img src="./images/logo_01.png" alt="" /></div>
+        <ul>
+          <li><a href="./home.html">首页</a></li>
+          <li><a href="">视频监控</a></li>
+          <li><a href="./alarm.html">入侵报警</a></li>
+          <li><a href="./link.html">事件联动</a></li>
+          <li><a href="./management.html"> 网络管理</a></li>
+          <li><a href="">运营管理</a></li>
+          <li><a href="">云隐分析</a></li>
+          <li><a href="">巡查考评</a></li>
+          <li><a href="">信息发布</a></li>
+          <li><a href="">代办消息</a></li>
+        </ul>
+      </div>
     </div>
+    <canvas
+      id="myCanvas"
+      width="900px"
+      height="500px"
+      style="float: left; margin: 30px; border: 1px solid black;"
+    >
+    </canvas>
     <div class="body">
-        <div class="video"></div>
-        <div style=" position:relative; ">
-            <div style="margin-left: 30px;">
-                <button style=" border: none; background-color: #999;padding: 10px; border-radius: 5px;">全屏</button>
-                </br>
-                <label for="">窗口分割线</label>
-                <select name=" " id="">
-                    <option value="2*2">2*2</option>
-                    <option value="4*4">4*4</option>
-                </select>
-            </div>
+      <div class="panel panel-heading">
+        <h4>视频监控</h4>
+      </div>
+      <div class="body_1">
+        <div>
+          <label for="">多画面选择：</label>
+          <select name=" " id="" style="padding: 0px 120px 0px 0px;">
+            <option value="2x2"></option>
+            <option value="4x4"></option>
+          </select>
         </div>
+        <div>
+          <label for="">已登录设备：</label>
+          <select style="padding: 0px 120px 0px 0px;">
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+          </select>
+        </div>
+        <div>
+          <label for="">通道列表：</label>
+          <select style="padding: 0px 120px 0px 0px;">
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+          </select>
+        </div>
+        <div>
+          <button class="btn btn-success btn-lg">开始预览</button>
+          <button class="btn btn-success btn-lg">停止预览</button>
+          <button class="btn btn-success btn-lg">抓图</button>
+        </div>
+      </div>
     </div>
-
-</body>
+  </body>
+  <script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.moveTo(450, 0);
+    ctx.lineTo(450, 500);
+    ctx.stroke();
+    var d = document.getElementById("myCanvas");
+    var ctx = d.getContext("2d");
+    ctx.moveTo(0, 250);
+    ctx.lineTo(900, 250);
+    ctx.stroke();
+  </script>
+</html>
