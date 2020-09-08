@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="video.css" />
   <link rel="stylesheet" href="./lib/bootstrap.min.css" />
   <link rel="stylesheet" href="navigation.css" />
-
+  <link rel="stylesheet" href="flex.compatibility.css" />
 </head>
 
 <body>
@@ -20,111 +20,116 @@
         <li><a href="">视频监控</a></li>
         <li><a href="./alarm.html">入侵报警</a></li>
         <li><a href="./link.html">事件联动</a></li>
+        <li><a href="">巡查考评</a></li>
         <li><a href="./management.html"> 网络管理</a></li>
         <li><a href="">运营管理</a></li>
         <li><a href="">云隐分析</a></li>
-        <li><a href="">巡查考评</a></li>
         <li><a href="">信息发布</a></li>
         <li><a href="">代办消息</a></li>
       </ul>
     </div>
   </div>
-  <div class="window">
-    <div class="top_1"></div>
-    <div class="top_2"></div>
-    <div class="bottom_1"></div>
-    <div class="bottom_2"></div>
-  </div>
-  <!-- <canvas id="myCanvas" width="900px" height="500px" style="float: left; margin: 30px; border: 1px solid black;">
-  </canvas> -->
-  <div class="left">
-    <h3>操作信息</h3>
-  </div>
-  <div class="body">
-    <div class="panel panel-heading">
-      <h4>监控信息</h4>
+  <div class="warp_content bbox lr">
+    <div class="bbox tb">
+        <div class="window">
+           
+        </div>
+        <div class="left">
+            <h3>操作信息</h3>
+        </div>
     </div>
-    <div class="body_1">
-      <div>
-        <label for="">多画面选择：</label>
-        <select name=" " id="" style="padding: 0px 120px 0px 0px;">
-          <option value="2x2"></option>
-          <option value="4x4"></option>
-        </select>
-      </div>
-      <div>
-        <label for="">已登录设备：</label>
-        <select style="padding: 0px 120px 0px 0px;">
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
-        </select>
-      </div>
-      <div>
-        <label for="">通道列表：</label>
-        <select style="padding: 0px 120px 0px 0px;">
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
-        </select>
-      </div>
-      <div>
-        <button class="btn btn-primary btn-lg" style="width: 150px;">开始预览</button>
-        <button class="btn btn-primary btn-lg" style="width: 150px;margin-left:20px">停止预览</button>
-        <button class="btn btn-primary btn-lg" style="width: 150px;margin-left:20px">抓图</button>
-      </div>
-    </div>
+    <div class="body">
+        <div class="panel panel-heading">
+            <h4>监控信息</h4>
+        </div>
+        <div class="body_1">
+            <div>
+                <label for="">多画面选择：</label>
+                <select name=" " id="" style="padding: 0px 120px 0px 0px;">
+                    <option value="2x2"></option>
+                    <option value="4x4"></option>
+                </select>
+            </div>
+            <div>
+                <label for="">已登录设备：</label>
+                <select style="padding: 0px 120px 0px 0px;">
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+            </div>
+            <div>
+                <label for="">通道列表：</label>
+                <select style="padding: 0px 120px 0px 0px;">
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+            </div>
+            <div>
+                <button class="btn btn-primary btn-lg" style="width: 150px;">开始预览</button>
+                <button class="btn btn-primary btn-lg" style="width: 150px;margin-left:20px">停止预览</button>
+                <button class="btn btn-primary btn-lg" style="width: 150px;margin-left:20px">抓图</button>
+            </div>
+        </div>
 
-    <div class="panel panel-heading" style="margin-top: 220px;">
-      <h4>本地配置</h4>
-    </div>
-    <form action="#">
-      <p>回放下载保存路径：<input type="text" style="width: 500px;">
-        <input type="submit" value="预览" class="btn btn-default">
-      </p></br>
-      <p>预览抓图保存路径：<input type="text" style="width: 500px;">
-        <input type="submit" value="浏览" class="btn btn-default">
-      </p>
-    </form>
-    <div class="panel panel-heading" style="margin-top: 20px;">
-      <h4>云台控制</h4>
-    </div>
+        <div class="panel panel-heading" style="margin-top: 220px;">
+            <h4>本地配置</h4>
+        </div>
+        <form action="#">
+            <p>
+                回放下载保存路径：<input type="text" style="width: 500px;">
+                <input type="submit" value="预览" class="btn btn-default">
+            </p></br>
+            <p>
+                预览抓图保存路径：<input type="text" style="width: 500px;">
+                <input type="submit" value="浏览" class="btn btn-default">
+            </p>
+        </form>
+        <div class="panel panel-heading" style="margin-top: 20px;">
+            <h4>云台控制</h4>
+        </div>
 
-    <div class="box">
-      <button>左上</button>
-      <button>上</button>
-      <button>右上</button></br>
-      <button>左</button>
-      <button>自动</button>
-      <button>右</button>
-      </br>
-      <button>左下</button>
-      <button>下</button>
-      <button>右下</button>
+        <div class="box">
+            <button>左上</button>
+            <button>上</button>
+            <button>右上</button></br>
+            <button>左</button>
+            <button>自动</button>
+            <button>右</button>
+            </br>
+            <button>左下</button>
+            <button>下</button>
+            <button>右下</button>
+        </div>
+        <div class="panel panel-heading" style="margin-top: 20px;">
+            <h4>视频回放</h4>
+        </div>
+        <div class="form-inline " style="font-size:18px;margin:20px;font-weight: 100;">
+            <label style="margin-right:50px">
+                开始时间：<input class="form-control" type="datetime-local"
+                            value="2020-01-16T12:15:33" />
+            </label>
+            <label> 结束时间：<input class="form-control" type="datetime-local" value="2020-11-16T15:25:33" /> </label>
+        </div>
+        <!--数据收集信息框-->
+        <div style="width:100%;height: 150px; border:1px solid #63B8FF"></div>
+        <!-- #回放按钮 -->
+        <div style="margin:20px;">
+            <button class="btn btn-primary " style="width:100px; ">开始回放</button>
+            <button class="btn btn-primary" style="width:100px; margin-left: 20px;">停止回放</button>
+            <button class="btn btn-primary " style="width:100px;margin-left: 20px;">暂停</button>
+            <button class="btn btn-primary " style="width:100px;margin-left: 20px;">恢复</button>
+            <button class="btn btn-primary " style="width:100px;margin-left: 20px;">快放</button>
+            <button class="btn btn-primary " style="width:100px;margin-left: 20px;">慢放</button>
+        </div>
     </div>
-    <div class="panel panel-heading" style="margin-top: 20px;">
-      <h4>视频回放</h4>
-    </div>
-    <div class="form-inline " style="font-size:18px;margin:20px;font-weight: 100;">
-      <label style="margin-right:50px"> 开始时间：<input class="form-control" type="datetime-local"
-          value="2020-01-16T12:15:33" />
-      </label>
-      <label> 结束时间：<input class="form-control" type="datetime-local" value="2020-11-16T15:25:33" /> </label>
-    </div>
-    <!--数据收集信息框-->
-    <div style="width:100%;height: 150px; border:1px solid #63B8FF"></div>
-    <!-- #回放按钮 -->
-    <div style="margin:20px;">
-      <button class="btn btn-primary " style="width:100px; ">开始回放</button>
-      <button class="btn btn-primary" style="width:100px; margin-left: 20px;">停止回放</button>
-      <button class="btn btn-primary " style="width:100px;margin-left: 20px;">暂停</button>
-      <button class="btn btn-primary " style="width:100px;margin-left: 20px;">恢复</button>
-      <button class="btn btn-primary " style="width:100px;margin-left: 20px;">快放</button>
-      <button class="btn btn-primary " style="width:100px;margin-left: 20px;">慢放</button>
-    </div>
-  </div>
+</div>
+ 
 
-  </div>
+
+
+ 
 </body>
 <!-- 给页面画一个四方格子-->
 <!-- <script>
