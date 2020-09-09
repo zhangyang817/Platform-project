@@ -10,6 +10,9 @@
     background-color: yellowgreen;
 } */
 
-.warp_content {
-  width: 100%;
+tr th {
+  text-align: center;
+}
+tr td {
+  text-align: center;
 }
