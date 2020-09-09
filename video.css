@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 .body {
   width: 900px;
   height: 1200px;
   margin: 35px 0px 0px 20px;
+=======
+.body { 
+  margin: 30px 30px 0px 20px;
+>>>>>>> b2716fb74121fd72f109c3552d3c7b99b3001b93
   background-color: #cee9f0;
 }
 
@@ -9,10 +14,17 @@
   font-size: 18px;
 }
 
+<<<<<<< HEAD
 .body_1 div {
   float: left;
   padding: 30px 20px;
 }
+=======
+  .body_1 div {
+      float: left;
+      padding: 10px 20px;
+  }
+>>>>>>> b2716fb74121fd72f109c3552d3c7b99b3001b93
 
 form {
   font-size: 18px;
@@ -24,6 +36,7 @@ form {
   height: 240px;
 }
 
+<<<<<<< HEAD
 .box button {
   width: 110px;
   height: 60px;
@@ -36,16 +49,26 @@ form {
   width: 900px;
   height: 400px;
   margin: 20px 0px 0px 30px;
+=======
+  .box button {
+      width: 110px;
+      height: 60px;
+      margin: 10px;
+      font-size: 15px;
+      border: none;
+  }
+
+.left {  
+  margin: 20px 30px 0px 30px; 
+>>>>>>> b2716fb74121fd72f109c3552d3c7b99b3001b93
   border: 1px solid #3eb5d3;
+  overflow:auto;
 }
 
-.window {
-  width: 900px;
-  height: 500px;
-  float: left;
+.window {  
+  min-width:500px;
+  max-width:1200px;
   margin: 30px;
-  border: 1px solid black;
-  background-color: #838b8b;
 }
 
 .top_1 {
@@ -78,6 +101,28 @@ form {
   border-left: 1px solid black;
 }
 
+<<<<<<< HEAD
 .warp_content {
   width: 100%;
 }
+=======
+.warp_content{width:100%;}
+.form-control.mycontrol {
+  width: auto;
+  display: inline-block;
+  min-width: 150px;
+ 
+}
+
+.lb_title{min-width:120px;text-align:center;}
+
+.td_chose_div .mybtn{margin-left:20px;padding:5px 20px;}
+
+.opinfo{padding:10px;}
+.left h3{padding:10px;}
+.form-control.Wdate {
+  border: none;
+  height: 34px;
+}
+.form-inline div{margin-top:10px;}
+>>>>>>> b2716fb74121fd72f109c3552d3c7b99b3001b93
