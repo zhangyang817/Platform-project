@@ -3,13 +3,9 @@
   padding: 0;
 }
 
-body {
-<<<<<<< HEAD
-  background-color: rgb(240, 241, 241);
-=======
+/* body {
   background-color: rgb(156, 174, 185);
->>>>>>> e0c4b12c0246b05f739ad35d0451a07b67067ea1
-}
+} */
 
 .nav {
   width: 100%;
@@ -46,10 +42,7 @@ body {
   font-weight: 600;
 }
 
-.nav ul li :active {
+.nav ul li a :active {
   color: black;
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> e0c4b12c0246b05f739ad35d0451a07b67067ea1
