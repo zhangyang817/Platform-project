@@ -1,274 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>巡查记录</title>
+    <link rel="stylesheet" href="./lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="./navigation.css" />
+    <link rel="stylesheet" href="vRecording.css" />
+    <script src="./lib/vue.js"></script>
+    <link rel="stylesheet" href="flex.compatibility.css" />
+    <script src="./lib/laydate/laydate.js"></script>
+    <style>
+      .warp_item_div {
+        height: 300px;
+        margin-top: 15px;
+      }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>巡查记录</title>
-  <link rel="stylesheet" href="./lib/bootstrap.min.css" />
-  <link rel="stylesheet" href="./navigation.css" />
-  <link rel="stylesheet" href="vRecording.css" />
-  <script src="./lib/vue.js"></script>
-  <link rel="stylesheet" href="flex.compatibility.css" />
-  <script src="./lib/laydate/laydate.js"></script>
-  <style>
-    .warp_item_div {
-      height: 300px;
-      margin-top: 15px;
-    }
+      .warp_item_div .title1 {
+        margin-top: 20px;
+      }
 
-    .warp_item_div .title1 {
-      margin-top: 20px;
-    }
+      .warp_item_div .title2 {
+        margin-top: 20px;
+      }
 
-    .warp_item_div .title2 {
-      margin-top: 20px;
-    }
+      .warp_item_div .btn-more {
+        width: 80px;
+      }
 
-    .warp_item_div .btn-more {
-      width: 80px;
-    }
+      .warp_item_div .p_item {
+        font-size: 20px;
+        margin-top: 22px;
+      }
 
-    .warp_item_div .p_item {
-      font-size: 20px;
-      margin-top: 22px;
-    }
+      .warp_item_div .count {
+        width: 80px;
+        margin: 0px 15px 0px 15px;
+        text-decoration: none;
+        font-size: 30px;
+        color: #337ab7;
+      }
 
-    .warp_item_div .count {
-      width: 80px;
-      margin: 0px 15px 0px 15px;
-      text-decoration: none;
-      font-size: 30px;
-      color: #337ab7;
-    }
+      .warp_table_div {
+        min-height: 300px;
+      }
+    </style>
+  </head>
 
-    .warp_table_div {
-      min-height: 300px;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="page_top">
-    <div class="nav">
-      <div><img src="./images/logo.jpg" alt="" /></div>
-      <ul>
-        <li><a href="./home.html">首页</a></li>
-        <li><a href="./video.html">视频监控</a></li>
-        <li><a href="./alarm.html">入侵报警</a></li>
-        <li><a href="./link.html">事件联动</a></li>
-        <li><a href="./vSearch.html">视频巡查</a></li>
-        <li><a href="./vRecording.html">巡查记录</a></li>
-        <li><a href="">运营管理</a></li>
-        <li><a href="">云隐分析</a></li>
-        <li><a href="">信息发布</a></li>
-        <li><a href="">代办消息</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="container-fluid" id="app">
-    <div class="row">
-      <div class="col-md-12 bbox lr">
-        <div class="col-md-3 warp_item_div">
-          <h3 class="bbox xycenter title1">周信息统计</h3>
-          <h4 class="bbox xycenter title2">本周</h4>
-          <p class="bbox xycenter p_item">
-            已完成<span class="bbox xycenter count">10</span>次
-          </p>
-          <p class="bbox xycenter p_item">
-            未完成<span class="bbox xycenter count">10</span>次
-          </p>
-          <p class="bbox xycenter p_item">
-            <button type="button" class="bbox xycenter btn btn-warning btn-more">
-              more
-            </button>
-          </p>
-        </div>
-        <div class="col-md-3 warp_item_div">
-          <h3 class="bbox xycenter title1">月信息统计</h3>
-          <h4 class="bbox xycenter title2">本月</h4>
-          <p class="bbox xycenter p_item">
-            已完成<span class="bbox xycenter count">10</span>次
-          </p>
-          <p class="bbox xycenter p_item">
-            未完成<span class="bbox xycenter count">10</span>次
-          </p>
-          <p class="bbox xycenter p_item">
-            <button type="button" class="bbox xycenter btn btn-warning btn-more">
-              more
-            </button>
-          </p>
-        </div>
-        <div class="col-md-3 warp_item_div">
-          <h3 class="bbox xycenter title1">年度信息统计</h3>
-          <h4 class="bbox xycenter title2">本年度</h4>
-          <p class="bbox xycenter p_item">
-            已完成<span class="bbox xycenter count">10</span>次
-          </p>
-          <p class="bbox xycenter p_item">
-            未完成<span class="bbox xycenter count">10</span>次
-          </p>
-          <p class="bbox xycenter p_item">
-            <button type="button" class="bbox xycenter btn btn-warning btn-more">
-              more
-            </button>
-          </p>
-        </div>
-        <div class="col-md-3 warp_item_div">
-          <h3 class="bbox xycenter title1">异常总排名</h3>
-          <h4 class="bbox xycenter title2">本年度</h4>
-          <p class="bbox xycenter p_item">
-            1<span class="bbox xycenter count">10</span>次
-          </p>
-          <p class="bbox xycenter p_item">
-            2<span class="bbox xycenter count">10</span>次
-          </p>
-          <p class="bbox xycenter p_item">
-            <button type="button" class="bbox xycenter btn btn-warning btn-more">
-              more
-            </button>
-          </p>
-        </div>
-      </div>
-
-      <div class="col-md-12" style="background-color: white; height: 60px">
-        <div class="panel-body form-inline" style="text-align: center; font-size: 16px">
-          <label> 开始时间： </label>
-          <input class="form-control" type="text" id="starttime" placeholder="请选择开始时间" value="" />
-          <label> 结束时间： </label>
-          <input class="form-control" type="text" id="endtime" placeholder="请选择结束时间" value="" />
-
-          <label for="" style="margin-left: 30px">人员：</label>
-          <input type="text" class="form-control" id="uname" value=" " />
-          <label for="" style="margin-left: 30px">状态：</label>
-          <select name="" class="form-control" id="sstype" style="width: 200px">
-            <option value="0">全部</option>
-            <option value="1">未巡完</option>
-            <option value="2">已巡完</option>
-          </select>
-          <input style="margin-left: 40px; width: 100px; margin-bottom: 5px" type="button" class="btn btn-primary"
-            id="btn_search" value="查询" />
-        </div>
-      </div>
-      <div class="col-md-12">
-        <table class="table table-striped table-hover table-bordered">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>开始时间</th>
-              <th>结束时间</th>
-              <th>人员</th>
-              <th>状态</th>
-              <th>详情</th>
-            </tr>
-          </thead>
-          <tbody v-for="item in list" :key="item.id">
-            <tr>
-              <td>{{item.id}}</td>
-              <td>{{item.startTime}}</td>
-              <td>{{item.endTime}}</td>
-              <td>{{item.person}}</td>
-              <td>{{item.status}}</td>
-              <td><a href="">详情</a></td>
-            </tr>
-          </tbody>
-        </table>
+  <body>
+    <div class="page_top">
+      <div class="nav">
+        <div><img src="./images/logo.jpg" alt="" /></div>
+        <ul>
+          <li><a href="./home.html">首页</a></li>
+          <li><a href="./video.html">视频监控</a></li>
+          <li><a href="./alarm.html">入侵报警</a></li>
+          <li><a href="./link.html">事件联动</a></li>
+          <li><a href="./vSearch.html">视频巡查</a></li>
+          <li><a href="./vRecording.html">巡查记录</a></li>
+          <li><a href="">运营管理</a></li>
+          <li><a href="">云隐分析</a></li>
+          <li><a href="">信息发布</a></li>
+          <li><a href="">代办消息</a></li>
+        </ul>
       </div>
     </div>
-  </div>
-  <script>
-    laydate.render({
-      elem: "#starttime",
-      trigger: "click",
-      format: "yyyy-MM-dd HH:mm:ss",
-      type: "datetime",
-    });
+    <div class="container-fluid" id="app">
+      <div class="row">
+        <div class="col-md-12 bbox lr">
+          <div class="col-md-3 warp_item_div">
+            <h3 class="bbox xycenter title1">周信息统计</h3>
+            <h4 class="bbox xycenter title2">本周</h4>
+            <p class="bbox xycenter p_item">
+              已完成<span class="bbox xycenter count">10</span>次
+            </p>
+            <p class="bbox xycenter p_item">
+              未完成<span class="bbox xycenter count">10</span>次
+            </p>
+            <p class="bbox xycenter p_item">
+              <button
+                type="button"
+                class="bbox xycenter btn btn-warning btn-more"
+              >
+                more
+              </button>
+            </p>
+          </div>
+          <div class="col-md-3 warp_item_div">
+            <h3 class="bbox xycenter title1">月信息统计</h3>
+            <h4 class="bbox xycenter title2">本月</h4>
+            <p class="bbox xycenter p_item">
+              已完成<span class="bbox xycenter count">10</span>次
+            </p>
+            <p class="bbox xycenter p_item">
+              未完成<span class="bbox xycenter count">10</span>次
+            </p>
+            <p class="bbox xycenter p_item">
+              <button
+                type="button"
+                class="bbox xycenter btn btn-warning btn-more"
+              >
+                more
+              </button>
+            </p>
+          </div>
+          <div class="col-md-3 warp_item_div">
+            <h3 class="bbox xycenter title1">年度信息统计</h3>
+            <h4 class="bbox xycenter title2">本年度</h4>
+            <p class="bbox xycenter p_item">
+              已完成<span class="bbox xycenter count">10</span>次
+            </p>
+            <p class="bbox xycenter p_item">
+              未完成<span class="bbox xycenter count">10</span>次
+            </p>
+            <p class="bbox xycenter p_item">
+              <button
+                type="button"
+                class="bbox xycenter btn btn-warning btn-more"
+              >
+                more
+              </button>
+            </p>
+          </div>
+          <div class="col-md-3 warp_item_div">
+            <h3 class="bbox xycenter title1">异常总排名</h3>
+            <h4 class="bbox xycenter title2">本年度</h4>
+            <p class="bbox xycenter p_item">
+              1<span class="bbox xycenter count">10</span>次
+            </p>
+            <p class="bbox xycenter p_item">
+              2<span class="bbox xycenter count">10</span>次
+            </p>
+            <p class="bbox xycenter p_item">
+              <button
+                type="button"
+                class="bbox xycenter btn btn-warning btn-more"
+              >
+                more
+              </button>
+            </p>
+          </div>
+        </div>
 
-    laydate.render({
-      elem: "#endtime",
-      trigger: "click",
-      format: "yyyy-MM-dd HH:mm:ss",
-      type: "datetime",
-    });
+        <div class="col-md-12" style="background-color: white; height: 60px">
+          <div
+            class="panel-body form-inline"
+            style="text-align: center; font-size: 16px"
+          >
+            <label> 开始时间： </label>
+            <input
+              class="form-control"
+              type="text"
+              id="starttime"
+              placeholder="请选择开始时间"
+              value=""
+            />
+            <label> 结束时间： </label>
+            <input
+              class="form-control"
+              type="text"
+              id="endtime"
+              placeholder="请选择结束时间"
+              value=""
+            />
 
-    var app = new Vue({
-      el: "#app",
-      data: {
-        list: [{
-            id: "1",
-            startTime: new Date().toLocaleString(),
-            endTime: new Date().toLocaleString(),
-            person: "胡汉三",
-            status: "已巡完",
-          },
-          {
-            id: "2",
-            startTime: new Date().toLocaleString(),
-            endTime: new Date().toLocaleString(),
-            person: "胡汉三",
-            status: "已巡完",
-          },
-          {
-            id: "3",
-            startTime: new Date().toLocaleString(),
-            endTime: new Date().toLocaleString(),
-            person: "胡汉三",
-            status: "已巡完",
-          },
-          {
-            id: "4",
-            startTime: new Date().toLocaleString(),
-            endTime: new Date().toLocaleString(),
-            person: "胡汉三",
-            status: "已巡完",
-          },
-          {
-            id: "5",
-            startTime: new Date().toLocaleString(),
-            endTime: new Date().toLocaleString(),
-            person: "胡汉三",
-            status: "已巡完",
-          },
-          {
-            id: "6",
-            startTime: new Date().toLocaleString(),
-            endTime: new Date().toLocaleString(),
-            person: "胡汉三",
-            status: "已巡完",
-          },
-          {
-            id: "7",
-            startTime: new Date().toLocaleString(),
-            endTime: new Date().toLocaleString(),
-            person: "胡汉三",
-            status: "已巡完",
-          },
-          {
-            id: "8",
-            startTime: new Date().toLocaleString(),
-            endTime: new Date().toLocaleString(),
-            person: "胡汉三",
-            status: "已巡完",
-          },
-          {
-            id: "9",
-            startTime: new Date().toLocaleString(),
-            endTime: new Date().toLocaleString(),
-            person: "胡汉三",
-            status: "已巡完",
-          },
-          {
-            id: "10",
-            startTime: new Date().toLocaleString(),
-            endTime: new Date().toLocaleString(),
-            person: "胡汉三",
-            status: "已巡完",
-          },
-        ],
-      },
-      methords: {},
-    });
-  </script>
-</body>
+            <label for="" style="margin-left: 30px">人员：</label>
+            <input type="text" class="form-control" id="uname" value=" " />
+            <label for="" style="margin-left: 30px">状态：</label>
+            <select
+              name=""
+              class="form-control"
+              id="sstype"
+              style="width: 200px"
+            >
+              <option value="0">全部</option>
+              <option value="1">未巡完</option>
+              <option value="2">已巡完</option>
+            </select>
+            <input
+              style="margin-left: 40px; width: 100px; margin-bottom: 5px"
+              type="button"
+              class="btn btn-primary"
+              id="btn_search"
+              value="查询"
+            />
+          </div>
+        </div>
+        <div class="col-md-12">
+          <table class="table table-striped table-hover table-bordered">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>开始时间</th>
+                <th>结束时间</th>
+                <th>人员</th>
+                <th>状态</th>
+                <th>详情</th>
+              </tr>
+            </thead>
+            <tbody v-for="item in list" :key="item.id">
+              <tr>
+                <td>{{item.id}}</td>
+                <td>{{item.startTime}}</td>
+                <td>{{item.endTime}}</td>
+                <td>{{item.person}}</td>
+                <td>{{item.status}}</td>
+                <td><a href="">详情</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script>
+      laydate.render({
+        elem: "#starttime",
+        trigger: "click",
+        format: "yyyy-MM-dd HH:mm:ss",
+        type: "datetime",
+      });
 
+      laydate.render({
+        elem: "#endtime",
+        trigger: "click",
+        format: "yyyy-MM-dd HH:mm:ss",
+        type: "datetime",
+      });
+
+      var app = new Vue({
+        el: "#app",
+        data: {
+          list: [
+            {
+              id: "1",
+              startTime: new Date().toLocaleString(),
+              endTime: new Date().toLocaleString(),
+              person: "胡汉三",
+              status: "已巡完",
+            },
+            {
+              id: "2",
+              startTime: new Date().toLocaleString(),
+              endTime: new Date().toLocaleString(),
+              person: "胡汉三",
+              status: "已巡完",
+            },
+            {
+              id: "3",
+              startTime: new Date().toLocaleString(),
+              endTime: new Date().toLocaleString(),
+              person: "胡汉三",
+              status: "已巡完",
+            },
+            {
+              id: "4",
+              startTime: new Date().toLocaleString(),
+              endTime: new Date().toLocaleString(),
+              person: "胡汉三",
+              status: "已巡完",
+            },
+            {
+              id: "5",
+              startTime: new Date().toLocaleString(),
+              endTime: new Date().toLocaleString(),
+              person: "胡汉三",
+              status: "已巡完",
+            },
+            {
+              id: "6",
+              startTime: new Date().toLocaleString(),
+              endTime: new Date().toLocaleString(),
+              person: "胡汉三",
+              status: "已巡完",
+            },
+            {
+              id: "7",
+              startTime: new Date().toLocaleString(),
+              endTime: new Date().toLocaleString(),
+              person: "胡汉三",
+              status: "已巡完",
+            },
+            {
+              id: "8",
+              startTime: new Date().toLocaleString(),
+              endTime: new Date().toLocaleString(),
+              person: "胡汉三",
+              status: "已巡完",
+            },
+            {
+              id: "9",
+              startTime: new Date().toLocaleString(),
+              endTime: new Date().toLocaleString(),
+              person: "胡汉三",
+              status: "已巡完",
+            },
+            {
+              id: "10",
+              startTime: new Date().toLocaleString(),
+              endTime: new Date().toLocaleString(),
+              person: "胡汉三",
+              status: "已巡完",
+            },
+          ],
+        },
+        methords: {},
+      });
+    </script>
+  </body>
 </html>
